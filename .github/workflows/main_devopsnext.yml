@@ -19,12 +19,12 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: 
-        username: ${{ secrets.DOCKERHUD_ID }}
-        password: ${{ secrets.DOCKERHUD_PWD }}
+        username: ${{ secrets.DOCKERHUB_ID }}
+        password: ${{ secrets.DOCKERHUB_PWD }}
         
     - name: Build and push container image to repository
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: ${{ secrets.DOCKERHUD_ID }}/devops-next:${{ github.sha }}
+        tags: ${{ secrets.DOCKERHUB_ID }}/devops-next:${{ github.sha }}
         file: ./Dockerfile
