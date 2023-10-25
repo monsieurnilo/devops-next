@@ -5,6 +5,7 @@ import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { onContactRequest } from "./actions"
 import {useState} from "react"
+import "./style.css"
 
 const onContactRequestSchema = z.object({
     firstName : z.string().min(2),
@@ -56,7 +57,7 @@ export default function Contact() {
                     {errors.email && <p>{errors.email.message}</p>}
                 </div>
                 <div>
-                    <input type="text" placeholder="Message" {...register("message")}/>
+                    <input type="textarea" placeholder="Message" {...register("message")}/>
                     {errors.message && <p>{errors.message.message}</p>}
                 </div>
                 {message && <p>{message}</p>}
