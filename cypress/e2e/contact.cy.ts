@@ -1,6 +1,6 @@
 describe('Contact page', () => {
   it('should send a message', () => {
-    cy.visit('http://localhost:3000/')
+    cy.visit('http://localhost:3000/contact')
     cy.get('input[name="lastName"]').type('Doe')
     cy.get('input[name="firstName"]').type('John')
     cy.get('input[name="email"]').type('johndoe@gmail.com')
